@@ -29,6 +29,11 @@
     color: #A000D9;
     font-size: 100px;
 }
+.container .main .counter form label {
+    display: block;
+    font-weight: bold;
+}
+
 
 .container .main .profile-section {
     align-items: center;

@@ -61,8 +61,19 @@
 
       <div class="main">
         <div class="counter">
+            <form method="post" action="{% url 'home' %}">
+              {% csrf_token %}
+              {{ love_counter_form.as_p }}
+              <button type="submit" class="btn btn-light">Tính ngày yêu nhau</button>
+            </form>
           <h1>Đang yêu</h1>
-          <div id="day-counter">5</div>
+
+          <div id="day-counter">
+            {% if love_days %}
+              <p>{{ love_days }}</p>
+            {% endif %}
+          </div>
+          
           <h2>Ngày</h2>
         </div>
 
