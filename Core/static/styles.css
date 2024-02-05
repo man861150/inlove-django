@@ -1,0 +1,43 @@
+.container {
+    background-color: #EEFAFF;
+}
+
+.container .header .navbar .navbar-brand img {
+    max-height: 50px;
+    width: auto;
+}
+
+.container .main {
+    margin-top: 35px;
+}
+
+.container .main .counter {
+    background-color: #FFD2D2;
+    width: 450px;
+    height: 450px;
+    border-radius: 50%;
+    text-align: center;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.container .main .counter #day-counter {
+    font-weight: bold;
+    color: #A000D9;
+    font-size: 100px;
+}
+
+.container .main .profile-section {
+    align-items: center;
+}
+
+
+
+.container .main .profile .avatar img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+}
