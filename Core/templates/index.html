@@ -55,17 +55,31 @@
         </div>
           
        
-        <div class="music"></div>
+        <div class="music" >
+
+          <div id="music-icon" onclick="toggleMusicPlayer()" class="position-absolute top-0 start-0">
+            <img src="{% static 'images/music.png' %}" alt="Music Icon" width="65px" height="45px">
+          </div>
+
+          <div class="position-absolute top-0 start-0 hidden" id="music-player-container">
+          <iframe  width="100%" height="300" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/1770120288&color=%23ff5500&auto_play=true&hide_related=false&show_comments=false&show_user=false&show_reposts=false&show_teaser=false&visual=true"></iframe> 
+            
+          </div>
+        </div>
+
+        <div class="heart-decoration">
+
+        </div>
         <div class="calendar"></div>
       </div>
 
       <div class="main">
         <div class="counter">
-            <form method="post" action="{% url 'home' %}">
+            <!-- <form method="post" action="{% url 'home' %}">
               {% csrf_token %}
               {{ love_counter_form.as_p }}
               <button type="submit" class="btn btn-light">Tính ngày yêu nhau</button>
-            </form>
+            </form> -->
           <h1>Đang yêu</h1>
 
           <div id="day-counter">
@@ -105,7 +119,7 @@
         
       </div>
 
-      <div class="footer">
+      <div class="footer" id="footer">
 
       </div>
 
