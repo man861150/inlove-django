@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     if (!storedDatingDay) {
         // If not stored, show the popup
-        var userDatingDay = prompt("Nhập vào ngày hẹn hò đầu tiên của bạn (YYYY-MM-DD):");
+        var userDatingDay = prompt("Nhập vào ngày hẹn hò đầu tiên của bạn theo định dạng(DD-MM-YYYY), ví dụ 30-01-2024:");
 
         // Validate and store the user input
         if (userDatingDay && isValidDate(userDatingDay)) {
@@ -20,14 +20,24 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Function to check if the input is a valid date
     function isValidDate(dateString) {
-        var regex = /^\d{4}-\d{2}-\d{2}$/;
-        return dateString.match(regex) !== null;
+        var parts = dateString.split("-");
+        if (parts.length != 3) {
+            return false;
+        }
+        var userDate = new Date(parts[2], parts[1] - 1, parts[0]);
+
+        return userDate && userDate.getDate() == parts[0] && userDate.getMonth() + 1 == parts[1] && userDate.getFullYear() == parts[2];
     }
 
     // Function to display love days
     function displayLoveDays(datingDay) {
         var today = new Date();
-        var loveDays = Math.floor((today - new Date(datingDay)) / (1000 * 60 * 60 * 24));
+
+        var parts = datingDay.split("-");
+
+        var datingDate = new Date(parts[2], parts[1] - 1, parts[0]);
+
+        var loveDays = Math.floor((today - datingDate) / (1000 * 60 * 60 * 24));
         document.getElementById('day-counter').innerText = loveDays;
     }
 });
