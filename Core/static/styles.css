@@ -90,11 +90,19 @@
     pointer-events: none; /* Ensures clicks pass through hearts */
 }
 
-.container .header .heart-decoration .heart {
+.container .header .heart-decoration .love {
     position: absolute;
     width: 50px;
     height: 50px;
-    background: url('images/heart_icon.png') no-repeat; /* Replace 'heart.png' with your heart image */
+    background: url('images/love.svg') no-repeat; /* Replace 'heart.png' with your heart image */
+    background-size: contain;
+    animation: fall 5s linear infinite;
+}
+.container .header .heart-decoration .care {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background: url('images/care.svg') no-repeat; /* Replace 'heart.png' with your heart image */
     background-size: contain;
     animation: fall 5s linear infinite;
 }

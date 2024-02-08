@@ -47,6 +47,7 @@ document.addEventListener("DOMContentLoaded", function() {
         "Love is not just something, It's everything.",
         "The best thing to hold onto in life is each other."
         // Add more quotes as needed
+        //
     ];
 
     var footer = document.getElementById('footer');
@@ -69,14 +70,20 @@ function toggleMusicPlayer() {
 }
 
 document.addEventListener("DOMContentLoaded", function() {
-    const numHearts = 20; // Number of hearts you want to generate
+    const numHearts = 10; // Number of hearts you want to generate
     const container = document.querySelector(".heart-decoration");
   
     for (let i = 0; i < numHearts; i++) {
-      const heart = document.createElement("div");
-      heart.classList.add("heart");
-      heart.style.left = Math.random() * 100 + "vw"; // Random horizontal position
-      heart.style.animationDuration = Math.random() * 3 + 2 + "s"; // Random animation duration
-      container.appendChild(heart);
+      const love = document.createElement("div");
+      love.classList.add("love");
+      love.style.left = Math.random() * 100 + "vw"; // Random horizontal position
+      love.style.animationDuration = Math.random() * 3 + 2 + "s"; // Random animation duration
+      container.appendChild(love);
+
+      const care = document.createElement("div");
+      care.classList.add("care");
+      care.style.left = Math.random() * 100 + "vw"; // Random horizontal position
+      care.style.animationDuration = Math.random() * 3 + 2 + "s"; // Random animation duration
+      container.appendChild(care);
     }
 });
