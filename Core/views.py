@@ -29,3 +29,6 @@ def index(request):
     form = LoveCounterForm(initial={'first_date': my_first_date})
     
     return render(request, 'index.html', {'love_counter_form': form, 'love_days': love_days})
+
+def profile(request):
+    return render(request, 'profile.html')

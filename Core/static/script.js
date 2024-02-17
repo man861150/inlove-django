@@ -1,23 +1,23 @@
 document.addEventListener("DOMContentLoaded", function() {
     // Check if the dating day is already stored in local storage
-    var storedDatingDay = localStorage.getItem('datingDay');
+    // var storedDatingDay = localStorage.getItem('datingDay');
 
-    if (!storedDatingDay) {
-        // If not stored, show the popup
-        var userDatingDay = prompt("Nhập vào ngày hẹn hò đầu tiên của bạn theo định dạng(DD-MM-YYYY), ví dụ 30-01-2024:");
+    // if (!storedDatingDay) {
+    //     // If not stored, show the popup
+    //     var userDatingDay = prompt("Nhập vào ngày hẹn hò đầu tiên của bạn theo định dạng(DD-MM-YYYY), ví dụ 30-01-2024:");
 
-        // Validate and store the user input
-        if (userDatingDay && isValidDate(userDatingDay)) {
-            localStorage.setItem('datingDay', userDatingDay);
-            displayLoveDays(userDatingDay);
-        } else {
-            alert("Sai định dạng. Vui lòng thử lại");
-        }
-    } else {
-        // If dating day is already stored, display love days
-        displayLoveDays(storedDatingDay);
-    }
-
+    //     // Validate and store the user input
+    //     if (userDatingDay && isValidDate(userDatingDay)) {
+    //         localStorage.setItem('datingDay', userDatingDay);
+    //         displayLoveDays(userDatingDay);
+    //     } else {
+    //         alert("Sai định dạng. Vui lòng thử lại");
+    //     }
+    // } else {
+    //     // If dating day is already stored, display love days
+    //     displayLoveDays(storedDatingDay);
+    // }
+    displayLoveDays();
     // Function to check if the input is a valid date
     function isValidDate(dateString) {
         var parts = dateString.split("-");
@@ -30,12 +30,14 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     // Function to display love days
-    function displayLoveDays(datingDay) {
+    function displayLoveDays() {
         var today = new Date();
 
-        var parts = datingDay.split("-");
+        // var parts = datingDay.split("-");
 
-        var datingDate = new Date(parts[2], parts[1] - 1, parts[0]);
+        // var datingDate = new Date(parts[2], parts[1] - 1, parts[0]);
+
+        datingDate = new Date(2024, 0, 30);
 
         var loveDays = Math.floor((today - datingDate) / (1000 * 60 * 60 * 24));
         document.getElementById('day-counter').innerText = loveDays;
@@ -87,3 +89,21 @@ document.addEventListener("DOMContentLoaded", function() {
       container.appendChild(care);
     }
 });
+
+// JavaScript to handle the click event on gallery items
+document.querySelectorAll('.gallery-item').forEach(item => {
+    item.addEventListener('click', () => {
+      const imageUrl = item.querySelector('img').getAttribute('src');
+      const enlargedImageContainer = document.querySelector('.enlarged-image-container');
+      const enlargedImage = document.querySelector('.enlarged-image');
+  
+      enlargedImage.src = imageUrl;
+      enlargedImageContainer.style.display = 'block';
+  
+      // Close the enlarged image when clicking outside of it
+      enlargedImageContainer.addEventListener('click', () => {
+        enlargedImageContainer.style.display = 'none';
+      });
+    });
+  });
+  

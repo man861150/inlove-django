@@ -1,0 +1,25 @@
+.container {
+    background-color: #EEFAFF;
+}
+
+.container .header .navbar .navbar-brand img {
+    max-height: 50px;
+    width: auto;
+}
+
+.container .main {
+    margin-top: 35px;
+}
+
+.container .main .profile {
+    margin-bottom: 30px;
+}
+
+.container .main .profile .rounded-image {
+    border-radius: 50%;
+    overflow: hidden;
+    width: 200px;
+    height: 200px;
+    margin: 0 auto;
+    margin-top: 20px;
+}
